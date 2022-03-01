@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Main-Class: com.mingxw.nlp.MNLP
+Class-Path: jackson-databind-2.8.4.jar shapeless_2.11-2.0.0.jar json4s-c
+ ore_2.11-3.5.0.jar breeze_2.11-0.12.jar junit-4.8.2.jar jtransforms-2.4
+ .0.jar breeze-macros_2.11-0.12.jar netlib-native_ref-osx-x86_64-1.1-nat
+ ives.jar netlib-native_system-win-x86_64-1.1-natives.jar scala-library-
+ 2.11.7.jar scala-reflect-2.11.8.jar netlib-native_ref-linux-x86_64-1.1-
+ natives.jar json4s-ast_2.11-3.5.0.jar netlib-native_system-linux-x86_64
+ -1.1-natives.jar netlib-native_system-linux-armhf-1.1-natives.jar nativ
+ e_ref-java-1.1.jar netlib-native_ref-linux-armhf-1.1-natives.jar json4s
+ -jackson_2.11-3.5.0.jar spire-macros_2.11-0.7.4.jar jackson-annotations
+ -2.8.0.jar jackson-core-2.8.4.jar netlib-native_system-osx-x86_64-1.1-n
+ atives.jar core-1.1.2.jar scala-xml_2.11-1.0.6.jar netlib-native_system
+ -win-i686-1.1-natives.jar netlib-native_ref-win-x86_64-1.1-natives.jar 
+ jniloader-1.1.jar netlib-native_system-linux-i686-1.1-natives.jar slf4j
+ -api-1.7.5.jar netlib-native_ref-linux-i686-1.1-natives.jar commons-mat
+ h3-3.2.jar opencsv-2.3.jar arpack_combined_all-0.1.jar spire_2.11-0.7.4
+ .jar paranamer-2.8.jar netlib-native_ref-win-i686-1.1-natives.jar json4
+ s-scalap_2.11-3.5.0.jar scala-logging_2.11-3.5.0.jar native_system-java
+ -1.1.jar
+
