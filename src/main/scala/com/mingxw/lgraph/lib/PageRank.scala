@@ -258,9 +258,24 @@ object PageRank {
         vertexProgram(id, attr, msgSum)
     }
 
-    Pregel(pagerankGraph, initialMessage, activeDirection = EdgeDirection.Out)(
+    val rankGraph = Pregel(pagerankGraph, initialMessage, activeDirection = EdgeDirection.Out)(
       vp, sendMessage, messageCombiner)
       .mapVertices((vid, attr) => attr._1)
+
+    // SPARK-18847 If the graph has sinks (vertices with no outgoing edges) correct the sum of ranks
+    normalizeRankSum(rankGraph, personalized)
   } // end of deltaPageRank
+
+  // Normalizes the sum of ranks to n (or 1 if personalized)
+  private def normalizeRankSum(rankGraph: Graph[Double, Double], personalized: Boolean) = {
+    val rankSum = rankGraph.vertices.map(_._2).sum
+    if (personalized) {
+      rankGraph.mapVertices((id, rank) => rank / rankSum)
+    } else {
+      val numVertices = rankGraph.numVertices
+      val correctionFactor = numVertices.toDouble / rankSum
+      rankGraph.mapVertices((id, rank) => rank * correctionFactor)
+    }
+  }
 
 }
